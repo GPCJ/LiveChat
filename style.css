@@ -1,0 +1,200 @@
+body {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #1a1a1a;
+}
+
+.chat-container {
+  width: 20%;
+  min-height: 60vh;
+  border-radius: 20px;
+  padding: 0px, 40px;
+  box-shadow: 8px 8px 20px rgba(255, 255, 255, 0.5);
+  background: #686767;
+  flex-direction: column;
+}
+
+.chat-nav {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 20px 20px 0 0;
+  background: rgb(148, 185, 93);
+  gap: 10px;
+  padding: 15px;
+}
+
+.roomName {
+  padding-left: 10px;
+}
+
+.userName {
+  text-align: center;
+}
+
+.close-btn {
+  background: #ffffff;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  border: solid 0px #ffffff;
+  cursor: pointer;
+}
+
+.chat-content {
+  height: 45vh;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-content {
+  position: relative;
+  display: flex;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px 0px;
+  /* 내 채팅과 상대 채팅 구분 기능 구현 시 채팅 줄 바꿈이 재멋대로인 문제 해결 */
+  width: 70%;
+  width: fit-content;
+  word-break: break-all;
+}
+
+.message-delete-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border-radius: 50%;
+  background: #2c2c2c;
+  color: #ffffff;
+  padding: 5px 10px;
+  border: 0px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.message-delete-btn:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.message-wrapper {
+  display: grid;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.message-wrapper span {
+  color: #ffffff;
+}
+
+.message-wrapper.other {
+  justify-content: flex-start;
+}
+.message-wrapper.mine {
+  justify-content: flex-end;
+}
+
+/* 채팅 입력 폼 */
+.chat-input {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #7a7a7a;
+  height: 10vh;
+  border-radius: 0 0 20px 20px;
+  padding: 0px 10px;
+}
+
+/* 채팅 입력창 */
+.chat-input input {
+  flex: 5;
+  padding: 15px 20px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* 채팅 전송 버튼 */
+.chat-input button {
+  flex: 1;
+  padding: 13px 15px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* 채팅 전송 버튼 비활성화 스타일 */
+.chat-input button:disabled {
+  background: #444444;
+  color: #ffffff;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* 닉네임 입력 스타일 */
+.nickname-input input {
+  height: 40px;
+  border-radius: 10px;
+}
+
+.nickname-input button {
+  width: 70px;
+  height: 45px;
+  border-radius: 10px;
+}
+
+/* 로딩 레이어 전체 배경 */
+#loading-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  transition: opacity 0.3s ease;
+}
+
+#loading-layer.hidden {
+  display: none;
+}
+
+/* 중앙 로딩 박스  */
+.loading-box {
+  text-align: center;
+  background: white;
+  padding: 20px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 스피너 (회전하는 원) */
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}

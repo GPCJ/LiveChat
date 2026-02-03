@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실시간 채팅</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- 닉네임 입력창 -->
+    <div>
+      <form action="" class="nickname-input">
+        <input type="text" placeholder="닉네임을 입력하세요..." id="nickname" />
+        <button type="submit" id="submit-nickname">확인</button>
+      </form>
+    </div>
+    <!-- 채팅방 -->
+    <div class="chat-container hidden">
+      <nav class="chat-nav">
+        <span class="room-name">채팅방</span>
+        <span class="user-nickname">이름</span>
+        <button class="close-btn">나가기</button>
+      </nav>
+      <div class="chat-content"></div>
+      <form action="" class="chat-input">
+        <input type="text" placeholder="채팅을 입력하세요..." id="chat" />
+        <button class="submit-btn" id="submit-chat">전송</button>
+      </form>
+    </div>
+    <!-- 로딩 -->
+    <div id="loading-layer" class="hidden">
+      <div class="loading-box">
+        <div class="spinner"></div>
+        <p>채팅 불러오는 중...</p>
+      </div>
+    </div>
+  </body>
+</html>
